@@ -2,4 +2,4 @@
 title: "Resume"
 ---
 
-[Download my resume (PDF)](personal_website/resume.pdf)
+[Download my resume (PDF)](other_docs/resume.pdf)
