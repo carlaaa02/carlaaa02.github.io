@@ -1,0 +1,28 @@
+/* css styles */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fdf6f0; /* light pastel peach */
+  color: #333;
+}
+
+.navbar {
+  background-color: #ffe5ec; /* light pastel pink */
+}
+
+a {
+  color: #c58f94; /* muted rose */
+}
+
+button {
+  background-color: #d8e2dc; /* soft pastel green */
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+}
+
+button:hover {
+  background-color: #b5cbbb; /* slightly darker pastel green */
+}

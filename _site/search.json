@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food (Pupusas) and it’s warm beaches."
+  },
+  {
+    "objectID": "about.html#where-im-from",
+    "href": "about.html#where-im-from",
+    "title": "About Me",
+    "section": "",
+    "text": "I grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food (Pupusas) and it’s warm beaches."
+  },
+  {
+    "objectID": "about.html#what-i-love",
+    "href": "about.html#what-i-love",
+    "title": "About Me",
+    "section": "What I Love",
+    "text": "What I Love\nI enjoy physical activities, drawing, and cooking"
+  },
+  {
+    "objectID": "about.html#pets",
+    "href": "about.html#pets",
+    "title": "About Me",
+    "section": "Pets",
+    "text": "Pets\nI have 2 pets, Max and Dino, they both are 6 years old and love going on walks."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Role: Research Intern, UCSB\nProgram: Edison STEM Summer Research Scholarship\nDescription:\nConducted research on avian functional richness spatial distribution using provided datasets. Utilized R for data manipulation, statistical analysis, and visualization. Presented results at two research showcases.\nKey Activities: - Cleaned and prepared avian trait and spatial distribution data - Computed functional richness metrics using FD and tidyverse packages - Generated spatial maps and statistical plots to visualize biodiversity pattern.\nPoster:\n\n\nReflection:\nThis project helped me strengthen my skills in ecological data science and reinforced the value of open-source tools for spatial biodiversity research."
+  },
+  {
+    "objectID": "projects.html#avian-functional-richness-spatial-distribution-research",
+    "href": "projects.html#avian-functional-richness-spatial-distribution-research",
+    "title": "Projects",
+    "section": "",
+    "text": "Role: Research Intern, UCSB\nProgram: Edison STEM Summer Research Scholarship\nDescription:\nConducted research on avian functional richness spatial distribution using provided datasets. Utilized R for data manipulation, statistical analysis, and visualization. Presented results at two research showcases.\nKey Activities: - Cleaned and prepared avian trait and spatial distribution data - Computed functional richness metrics using FD and tidyverse packages - Generated spatial maps and statistical plots to visualize biodiversity pattern.\nPoster:\n\n\nReflection:\nThis project helped me strengthen my skills in ecological data science and reinforced the value of open-source tools for spatial biodiversity research."
+  },
+  {
+    "objectID": "projects.html#tropical-field-research-and-data-analysis-in-panama",
+    "href": "projects.html#tropical-field-research-and-data-analysis-in-panama",
+    "title": "Projects",
+    "section": "Tropical Field Research and Data Analysis in Panama",
+    "text": "Tropical Field Research and Data Analysis in Panama\nRole: Participant, UCSB & Colón, Panama\nProgram: Smithsonian Scholars Program\nDescription:\nParticipated in an advanced field research course focused on tropical ecology and data analysis. The program included intensive training in R programming for field-based data analysis, hands-on use of bioacoustic and camera trap technologies, and field assessments of tropical bird populations.\nKey Activities: - Completed a focused R programming course for analyzing ecological field data - Deployed AudioMoth devices and camera traps to collect environmental data - Conducted point counts for avian population assessments in tropical forests\nSkills Gained: - Environmental data collection techniques - Field survey methodology for avifauna - Applied ecological statistics in R\nReflection:\nThis immersive program strengthened my ability to collect and analyze field data in real-world tropical ecosystems, bridging practical field methods with analytical tools."
+  },
+  {
+    "objectID": "Drawing.html",
+    "href": "Drawing.html",
+    "title": "Drawings",
+    "section": "",
+    "text": "Welcome to my gallery! Below are a few of my favorite drawings. Click on each image to view it in full size."
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Download my resume (PDF)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Carla Quintanilla",
+    "section": "",
+    "text": "My name is Carla Quintanilla, and I’m currently a fourth-year student at the University of California, Santa Barbara. I have a strong passion for the outdoors and enjoy spending time in nature. My academic interests focus on groundwater management, and after graduation, I plan to continue working as an Assistant Manager at Panda Express while beginning graduate school."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Carla Quintanilla",
+    "section": "Education",
+    "text": "Education\nB.S. Hydrologic Science & Policy, Emphasis: Chemical & Physical, University of California Santa Barbara, Graduation year: 2025"
+  }
+]

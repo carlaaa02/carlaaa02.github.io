@@ -1,0 +1,21 @@
+---
+title: "Drawings"
+---
+
+# My Art & Illustrations ✍️
+
+Welcome to my gallery! Below are a few of my favorite drawings. Click on each image to view it in full size.
+
+------------------------------------------------------------------------
+
+## Sketches
+
+![Sketch 1](images/drawings/sketch1.jpg) ![Sketch 2](images/drawings/sketch2.jpg) ![Sketch 3](images/drawings/sketch3.jpg)
+
+------------------------------------------------------------------------
+
+## Digital Art
+
+![Digital 1](images/drawings/digital1.png) ![Digital 2](images/drawings/digital2.png)
+
+------------------------------------------------------------------------

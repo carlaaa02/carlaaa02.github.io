@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "Carla Quintanilla"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "About Me"
+        href: about.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "Drawing"
+        href: Drawing.qmd
+      - text: "Resume"
+        href: resume.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual
+
