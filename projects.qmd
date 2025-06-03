@@ -2,6 +2,8 @@
 title: "Projects"
 ---
 
+---
+
 ## Avian Functional Richness Spatial Distribution Research
 
 **Role:** Research Intern, UCSB\
@@ -12,11 +14,17 @@ Conducted research on avian functional richness spatial distribution using provi
 
 **Key Activities:** - Cleaned and prepared avian trait and spatial distribution data - Computed functional richness metrics using `FD` and `tidyverse` packages - Generated spatial maps and statistical plots to visualize biodiversity pattern.
 
-**Poster:**
+------------------------------------------------------------------------
 
-![](photos/poster.jpg)
+**Research Poster**
 
-![](photos/me_poster.jpeg)
+![](photos/poster.jpg){width="669"}
+
+------------------------------------------------------------------------
+
+**Presented at the Center for Science and Engineering Partnerships Colloquium**
+
+![](photos/me_poster.jpeg){width="669"}
 
 **Reflection:**\
 This project helped me strengthen my skills in ecological data science and reinforced the value of open-source tools for spatial biodiversity research.
@@ -38,10 +46,18 @@ Participated in an advanced field research course focused on tropical ecology an
 **Reflection:**\
 This immersive program strengthened my ability to collect and analyze field data in real-world tropical ecosystems, bridging practical field methods with analytical tools.
 
-![](photos/me_group.jpeg)
+------------------------------------------------------------------------
 
-![](photos/panama1.jpeg)
+**Gamboa, Panama**
 
-![](photos/panama2.jpeg)
+![](photos/me_group.jpeg){width="669"}
 
-![](photos/panama3.jpeg)
+------------------------------------------------------------------------
+
+**Cool Pictures taken in Pipeline Road, Panama**
+
+![](photos/panama1.jpeg){width="669"}
+
+![](photos/panama2.jpeg){width="669"}
+
+![](photos/panama3.jpeg){width="669"}

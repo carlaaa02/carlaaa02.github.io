@@ -20,7 +20,7 @@ website:
 format:
   html:
     theme:
-      - cosmo
+      - cosmos
       - brand
     css: styles.css
     toc: true
