@@ -1,0 +1,123 @@
+---
+title: "Rstudio Art"
+---
+
+## Exploring in Rstudio 
+
+<br>
+
+### Razzle-dazzle
+
+```{r}
+#| message: false
+#| warning: false
+library(ggplot2)
+library(purrr)
+library(dplyr)
+library(tibble)
+library(artpack)
+
+
+# Base square
+square <- square_data(x = 0, y = 0, size = .1, group_var = TRUE)
+
+# Generate specs
+n_square <- 500
+scaler <- seq(1, 100, length = n_square)
+fills <- art_pals("sunnyside", n = n_square)
+angles <- seq(0, 360, length = n_square)
+group_n <- group_numbers(1:n_square)
+theta <- seq(0, 30, length = 250)
+
+list_opts <- list(scaler, fills, angles, group_n)
+
+# Transform and bind
+df <- pmap(list_opts, ~ rotator(
+  square |>
+    mutate(
+      x = (x + ..1),
+      y = (y * ..1),
+      fill = ..2,
+      group = paste0(group, ..4)
+    ),
+  x = x, y = y, angle = ..3
+)) |>
+  list_rbind() |>
+  mutate(
+    x = x + cos(theta),
+    y = y + sin(theta)
+  )
+
+# Plot it
+df |>
+  ggplot(aes(x = x, y = y, group = group)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "#000000")) +
+  geom_path(
+    color = df$fill,
+    alpha = .2
+  )
+
+```
+
+### Heart Rotate
+
+```{r}
+heart <- tibble(
+  t = seq(0, 2 * pi, length.out = 100),
+  x = 16 * sin(t)^3,
+  y = 13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t)
+) 
+
+rotated_heart <- rotator(
+  data = heart,
+  x = x,
+  y = y,
+  angle = 180,
+  anchor = "bottom"
+)
+
+ggplot() +
+  geom_path(
+    data = heart,
+    aes(x, y),
+    color = "white"
+  ) +
+  geom_polygon(
+    data = rotated_heart,
+    aes(x, y),
+    fill = "red"
+  ) +
+  coord_equal() +
+  theme_void() +
+  theme(
+    plot.background = element_rect(fill = "black", color = NA),  
+    panel.background = element_rect(fill = "black", color = NA)
+  )
+  
+```
+
+```{r}
+# Create a grid of points
+grid <- expand.grid(x = 1:20, y = 1:20)
+
+# Add color and size based on math
+grid <- grid %>%
+  mutate(
+    value = sin(x / 2) + cos(y / 3),  # Create wave-based pattern
+    size = abs(value),
+    color = value
+  )
+
+# Plot
+ggplot(grid, aes(x = x, y = y)) +
+  geom_point(aes(size = size, color = color), shape = 21, stroke = 0.3) +
+  scale_color_gradientn(colors = c("#ff6b6b", "#feca57", "#48dbfb", "#1dd1a1")) +
+  scale_size(range = c(2, 6)) +
+  theme_void() +
+  theme(
+    legend.position = "none",
+    panel.background = element_rect(fill = "#1e272e", color = NA),
+    plot.background = element_rect(fill = "#1e272e", color = NA)
+  ) 
+```
