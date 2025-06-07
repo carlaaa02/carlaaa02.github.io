@@ -16,6 +16,10 @@ website:
         href: Drawing.qmd
       - text: "Resume"
         href: resume.qmd
+  page-footer:
+    background: light
+    left: Copyright 2025, Carla Quintanilla
+    right: Hola!
 
 format:
   html:

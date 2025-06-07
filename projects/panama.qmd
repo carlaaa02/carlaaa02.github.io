@@ -1,20 +1,32 @@
 ---
-title: "Panama"
+title: "Panama, Smithsonian Tropical Research Institute (STRI)"
+image: /photos/butterfly.jpeg
 ---
 
-------------------------------------------------------------------------
+<br>
 
-## Tropical Field Research and Data Analysis in Panama
+## Tropical Field Research and Data Analysis in Panama 🇵🇦
 
 **Role:** Participant, UCSB & *Colón, Panama*\
+
 **Program:** Smithsonian Scholars Program
 
 **Description:**\
 Participated in an advanced field research course focused on tropical ecology and data analysis. The program included intensive training in R programming for field-based data analysis, hands-on use of bioacoustic and camera trap technologies, and field assessments of tropical bird populations.
 
-**Key Activities:** - Completed a focused R programming course for analyzing ecological field data - Deployed AudioMoth devices and camera traps to collect environmental data - Conducted point counts for avian population assessments in tropical forests
+**Key Activities:**\
 
-**Skills Gained:** - Environmental data collection techniques - Field survey methodology for avifauna - Applied ecological statistics in R
+-   Completed a focused R programming course for analyzing ecological field data
+
+-   Deployed AudioMoth devices and camera traps to collect environmental data
+
+-   Conducted point counts for avian population assessments in tropical forests
+
+**Skills Gained:**\
+
+-   Environmental data collection techniques
+
+-   Field survey methodology for avifauna - Applied ecological statistics in R
 
 **Reflection:**\
 This immersive program strengthened my ability to collect and analyze field data in real-world tropical ecosystems, bridging practical field methods with analytical tools.
@@ -23,14 +35,14 @@ This immersive program strengthened my ability to collect and analyze field data
 
 **Gamboa, Panama**
 
-![](photos/me_group.jpeg){width="669"}
+![](/photos/me_group.jpeg)
 
 ------------------------------------------------------------------------
 
 **Cool Pictures taken in Pipeline Road, Panama**
 
-![](photos/panama1.jpeg){width="669"}
+![](/photos/panama1.jpeg)
 
-![](photos/panama2.jpeg){width="669"}
+![](/photos/panama2.jpeg)
 
-![](photos/panama3.jpeg){width="669"}
+![](/photos/panama3.jpeg)
