@@ -1,0 +1,40 @@
+---
+title: "Edison Research Scholarship"
+image: /photos/edison.png
+---
+
+<br>
+
+## Avian Functional Richness Spatial Distribution Research
+
+**Role:** Research Intern, UCSB
+
+**Program:** Edison STEM Summer Research Scholarship
+
+**Scholarship amount:** \$5,000
+
+**Description:**\
+Conducted research on avian functional richness spatial distribution using provided datasets. Utilized R for data manipulation, statistical analysis, and visualization. Presented results at two research showcases.
+
+**Key Activities:**
+
+\- Cleaned and prepared avian trait and spatial distribution data
+
+\- Computed functional richness metrics using `FD` and `tidyverse` packages
+
+\- Generated spatial maps and statistical plots to visualize biodiversity pattern.
+
+------------------------------------------------------------------------
+
+**Research Poster**
+
+![](/photos/poster.jpg)
+
+------------------------------------------------------------------------
+
+**Presented at the Center for Science and Engineering Partnerships Colloquium**
+
+![](/photos/me_poster.jpeg)
+
+**Reflection:**\
+This project helped me strengthen my skills in ecological data science and reinforced the value of open source tools for spatial biodiversity research.
