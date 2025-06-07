@@ -2,7 +2,8 @@
 title: "Projects"
 listing:
   contents: projects
-  type: default   
+  type: default
+  categories: false
 ---
 
 <br>
