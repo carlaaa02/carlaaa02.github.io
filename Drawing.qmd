@@ -1,21 +1,50 @@
 ---
 title: "Drawings"
+lightbox: true
 ---
 
 # My Art & Illustrations ✍️
 
-Welcome to my gallery! Below are a few of my favorite drawings. Click on each image to view it in full size.
+Welcome to my gallery! Below are a few of my drawings. Click of the image to see enlarge version.
+
+<br>
+
+## Paper Sketches
+
+![Deer Geometry](photos/deer.jpg)
+
+This was one of my first drawings! I wanted to experiment with geometry patterns and came up with this.
 
 ------------------------------------------------------------------------
 
-## Sketches
+![Triceratops](photos/dino_draw.jpg)
 
-![Sketch 1](images/drawings/sketch1.jpg) ![Sketch 2](images/drawings/sketch2.jpg) ![Sketch 3](images/drawings/sketch3.jpg)
+I love dinosaurs! This a very simple but cool drawing and the first dinosaur I draw.
 
 ------------------------------------------------------------------------
 
-## Digital Art
+## Digital Skeches
 
-![Digital 1](images/drawings/digital1.png) ![Digital 2](images/drawings/digital2.png)
+![Nature](photos/nature.jpg)
+
+This drawing was inspired by my trip to Panama. I started it on the plane and completed it over the two weeks I spent there. It represents the connection between nature and humanity.
+
+------------------------------------------------------------------------
+
+![Brachiosaurus](photos/dino_dig.jpg)
+
+Long-necked dinosaurs are my favorite! they look so adorable in most sketches. That’s why I wanted to try something different by drawing a slightly scarier, more realistic version
+
+------------------------------------------------------------------------
+
+![Museum Art](photos/museum.jpg)
+
+This drawing was inspired by famous museum artworks, with the background featuring the UCSB library. I created it while sitting in the library’s egg-shaped chairs. I left the background blank because I liked the contrast it created with the art pieces. This is also one of the few times I added color to my work, as I usually prefer pencil drawing styles. I plan to add more detail to it in the future.
+
+------------------------------------------------------------------------
+
+![Woman](photos/personal.jpg)
+
+This was my first digital sketch, created using the Procreate app on my iPad. I wanted to design a drawing that could serve as a template for my first tattoo. I haven’t gotten the tattoo yet but hopefully soon!
 
 ------------------------------------------------------------------------

@@ -1,25 +1,32 @@
 ---
 title: "About Me"
+lightbox: true
 ---
+
+<br>
 
 ## Where I'm From
 
-I grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food (Pupusas) and it's warm beaches.
+I grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food and it's warm beaches.
 
-![](photos/pupusas.JPG)
+![Pupusas](photos/pupusas.JPG){fig-align="left" width="669"}
 
-![](photos/46.jpg)
+![Beaches In El Salvador are famous for it's waves](photos/46.jpg){fig-align="left"}
+
+<br>
 
 ## What I Love
 
-I enjoy physical activities, drawing, and cooking
+I enjoy physical activities, drawing, and cooking.
 
-![](photos/outdoor.jpeg)
+![](photos/outdoor.jpeg){fig-align="left" width="669"}
+
+<br>
 
 ## Pets
 
 I have 2 pets, Max and Dino, they both are 6 years old and love going on walks.
 
-![](photos/max.jpeg)
+![Max](photos/max.jpeg){fig-align="left" width="669"}
 
-![](photos/dino.jpg)
+![Dino](photos/dino.jpg){fig-align="left" width="669"}
