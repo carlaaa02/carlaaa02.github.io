@@ -1,66 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "rstudio.html",
+    "href": "rstudio.html",
+    "title": "Rstudio Art",
     "section": "",
-    "text": "I grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food (Pupusas) and it’s warm beaches."
+    "text": "library(ggplot2)\nlibrary(purrr)\nlibrary(dplyr)\nlibrary(tibble)\nlibrary(artpack)\n\n\n# Base square\nsquare &lt;- square_data(x = 0, y = 0, size = .1, group_var = TRUE)\n\n# Generate specs\nn_square &lt;- 500\nscaler &lt;- seq(1, 100, length = n_square)\nfills &lt;- art_pals(\"sunnyside\", n = n_square)\nangles &lt;- seq(0, 360, length = n_square)\ngroup_n &lt;- group_numbers(1:n_square)\ntheta &lt;- seq(0, 30, length = 250)\n\nlist_opts &lt;- list(scaler, fills, angles, group_n)\n\n# Transform and bind\ndf &lt;- pmap(list_opts, ~ rotator(\n  square |&gt;\n    mutate(\n      x = (x + ..1),\n      y = (y * ..1),\n      fill = ..2,\n      group = paste0(group, ..4)\n    ),\n  x = x, y = y, angle = ..3\n)) |&gt;\n  list_rbind() |&gt;\n  mutate(\n    x = x + cos(theta),\n    y = y + sin(theta)\n  )\n\n# Plot it\ndf |&gt;\n  ggplot(aes(x = x, y = y, group = group)) +\n  theme_void() +\n  theme(plot.background = element_rect(fill = \"#000000\")) +\n  geom_path(\n    color = df$fill,\n    alpha = .2\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nheart &lt;- tibble(\n  t = seq(0, 2 * pi, length.out = 100),\n  x = 16 * sin(t)^3,\n  y = 13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t)\n) \n\nrotated_heart &lt;- rotator(\n  data = heart,\n  x = x,\n  y = y,\n  angle = 180,\n  anchor = \"bottom\"\n)\n\nggplot() +\n  geom_path(\n    data = heart,\n    aes(x, y),\n    color = \"white\"\n  ) +\n  geom_polygon(\n    data = rotated_heart,\n    aes(x, y),\n    fill = \"red\"\n  ) +\n  coord_equal() +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = \"black\", color = NA),  \n    panel.background = element_rect(fill = \"black\", color = NA)\n  )\n\n\n\n\n\n\n\n\n\n# Create a grid of points\ngrid &lt;- expand.grid(x = 1:20, y = 1:20)\n\n# Add color and size based on math\ngrid &lt;- grid %&gt;%\n  mutate(\n    value = sin(x / 2) + cos(y / 3),  # Create wave-based pattern\n    size = abs(value),\n    color = value\n  )\n\n# Plot\nggplot(grid, aes(x = x, y = y)) +\n  geom_point(aes(size = size, color = color), shape = 21, stroke = 0.3) +\n  scale_color_gradientn(colors = c(\"#ff6b6b\", \"#feca57\", \"#48dbfb\", \"#1dd1a1\")) +\n  scale_size(range = c(2, 6)) +\n  theme_void() +\n  theme(\n    legend.position = \"none\",\n    panel.background = element_rect(fill = \"#1e272e\", color = NA),\n    plot.background = element_rect(fill = \"#1e272e\", color = NA)\n  )"
   },
   {
-    "objectID": "about.html#where-im-from",
-    "href": "about.html#where-im-from",
-    "title": "About Me",
+    "objectID": "rstudio.html#exploring-in-rstudio",
+    "href": "rstudio.html#exploring-in-rstudio",
+    "title": "Rstudio Art",
     "section": "",
-    "text": "I grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food (Pupusas) and it’s warm beaches."
-  },
-  {
-    "objectID": "about.html#what-i-love",
-    "href": "about.html#what-i-love",
-    "title": "About Me",
-    "section": "What I Love",
-    "text": "What I Love\nI enjoy physical activities, drawing, and cooking"
-  },
-  {
-    "objectID": "about.html#pets",
-    "href": "about.html#pets",
-    "title": "About Me",
-    "section": "Pets",
-    "text": "Pets\nI have 2 pets, Max and Dino, they both are 6 years old and love going on walks."
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Role: Research Intern, UCSB\nProgram: Edison STEM Summer Research Scholarship\nDescription:\nConducted research on avian functional richness spatial distribution using provided datasets. Utilized R for data manipulation, statistical analysis, and visualization. Presented results at two research showcases.\nKey Activities: - Cleaned and prepared avian trait and spatial distribution data - Computed functional richness metrics using FD and tidyverse packages - Generated spatial maps and statistical plots to visualize biodiversity pattern.\nPoster:\n\n\nReflection:\nThis project helped me strengthen my skills in ecological data science and reinforced the value of open-source tools for spatial biodiversity research."
-  },
-  {
-    "objectID": "projects.html#avian-functional-richness-spatial-distribution-research",
-    "href": "projects.html#avian-functional-richness-spatial-distribution-research",
-    "title": "Projects",
-    "section": "",
-    "text": "Role: Research Intern, UCSB\nProgram: Edison STEM Summer Research Scholarship\nDescription:\nConducted research on avian functional richness spatial distribution using provided datasets. Utilized R for data manipulation, statistical analysis, and visualization. Presented results at two research showcases.\nKey Activities: - Cleaned and prepared avian trait and spatial distribution data - Computed functional richness metrics using FD and tidyverse packages - Generated spatial maps and statistical plots to visualize biodiversity pattern.\nPoster:\n\n\nReflection:\nThis project helped me strengthen my skills in ecological data science and reinforced the value of open-source tools for spatial biodiversity research."
-  },
-  {
-    "objectID": "projects.html#tropical-field-research-and-data-analysis-in-panama",
-    "href": "projects.html#tropical-field-research-and-data-analysis-in-panama",
-    "title": "Projects",
-    "section": "Tropical Field Research and Data Analysis in Panama",
-    "text": "Tropical Field Research and Data Analysis in Panama\nRole: Participant, UCSB & Colón, Panama\nProgram: Smithsonian Scholars Program\nDescription:\nParticipated in an advanced field research course focused on tropical ecology and data analysis. The program included intensive training in R programming for field-based data analysis, hands-on use of bioacoustic and camera trap technologies, and field assessments of tropical bird populations.\nKey Activities: - Completed a focused R programming course for analyzing ecological field data - Deployed AudioMoth devices and camera traps to collect environmental data - Conducted point counts for avian population assessments in tropical forests\nSkills Gained: - Environmental data collection techniques - Field survey methodology for avifauna - Applied ecological statistics in R\nReflection:\nThis immersive program strengthened my ability to collect and analyze field data in real-world tropical ecosystems, bridging practical field methods with analytical tools."
-  },
-  {
-    "objectID": "Drawing.html",
-    "href": "Drawing.html",
-    "title": "Drawings",
-    "section": "",
-    "text": "Welcome to my gallery! Below are a few of my favorite drawings. Click on each image to view it in full size."
-  },
-  {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Resume",
-    "section": "",
-    "text": "Download my resume (PDF)"
+    "text": "library(ggplot2)\nlibrary(purrr)\nlibrary(dplyr)\nlibrary(tibble)\nlibrary(artpack)\n\n\n# Base square\nsquare &lt;- square_data(x = 0, y = 0, size = .1, group_var = TRUE)\n\n# Generate specs\nn_square &lt;- 500\nscaler &lt;- seq(1, 100, length = n_square)\nfills &lt;- art_pals(\"sunnyside\", n = n_square)\nangles &lt;- seq(0, 360, length = n_square)\ngroup_n &lt;- group_numbers(1:n_square)\ntheta &lt;- seq(0, 30, length = 250)\n\nlist_opts &lt;- list(scaler, fills, angles, group_n)\n\n# Transform and bind\ndf &lt;- pmap(list_opts, ~ rotator(\n  square |&gt;\n    mutate(\n      x = (x + ..1),\n      y = (y * ..1),\n      fill = ..2,\n      group = paste0(group, ..4)\n    ),\n  x = x, y = y, angle = ..3\n)) |&gt;\n  list_rbind() |&gt;\n  mutate(\n    x = x + cos(theta),\n    y = y + sin(theta)\n  )\n\n# Plot it\ndf |&gt;\n  ggplot(aes(x = x, y = y, group = group)) +\n  theme_void() +\n  theme(plot.background = element_rect(fill = \"#000000\")) +\n  geom_path(\n    color = df$fill,\n    alpha = .2\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nheart &lt;- tibble(\n  t = seq(0, 2 * pi, length.out = 100),\n  x = 16 * sin(t)^3,\n  y = 13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t)\n) \n\nrotated_heart &lt;- rotator(\n  data = heart,\n  x = x,\n  y = y,\n  angle = 180,\n  anchor = \"bottom\"\n)\n\nggplot() +\n  geom_path(\n    data = heart,\n    aes(x, y),\n    color = \"white\"\n  ) +\n  geom_polygon(\n    data = rotated_heart,\n    aes(x, y),\n    fill = \"red\"\n  ) +\n  coord_equal() +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = \"black\", color = NA),  \n    panel.background = element_rect(fill = \"black\", color = NA)\n  )\n\n\n\n\n\n\n\n\n\n# Create a grid of points\ngrid &lt;- expand.grid(x = 1:20, y = 1:20)\n\n# Add color and size based on math\ngrid &lt;- grid %&gt;%\n  mutate(\n    value = sin(x / 2) + cos(y / 3),  # Create wave-based pattern\n    size = abs(value),\n    color = value\n  )\n\n# Plot\nggplot(grid, aes(x = x, y = y)) +\n  geom_point(aes(size = size, color = color), shape = 21, stroke = 0.3) +\n  scale_color_gradientn(colors = c(\"#ff6b6b\", \"#feca57\", \"#48dbfb\", \"#1dd1a1\")) +\n  scale_size(range = c(2, 6)) +\n  theme_void() +\n  theme(\n    legend.position = \"none\",\n    panel.background = element_rect(fill = \"#1e272e\", color = NA),\n    plot.background = element_rect(fill = \"#1e272e\", color = NA)\n  )"
   },
   {
     "objectID": "index.html",
@@ -75,5 +26,82 @@
     "title": "Carla Quintanilla",
     "section": "Education",
     "text": "Education\nB.S. Hydrologic Science & Policy, Emphasis: Chemical & Physical, University of California Santa Barbara, Graduation year: 2025"
+  },
+  {
+    "objectID": "projects/rstudio.html",
+    "href": "projects/rstudio.html",
+    "title": "Rstudio Art",
+    "section": "",
+    "text": "This post is about a mix of artistic curiosity and technical experimentation. I plan to continue developing this section with more animated or interactive visuals.\n\n\nlibrary(ggplot2)\nlibrary(purrr)\nlibrary(dplyr)\nlibrary(tibble)\nlibrary(artpack)\n\n\nHeart\nI adapted this idea from The Tidy Trekker, who originally used a square in their art piece. I modified the figure by replacing the square with a parametric heart shape, using its mathematical equation.\nI also customized the colors to fit my own style, going for a clean white outline on a black background and filling the rotated heart in red for contrast.\n\nheart &lt;- tibble(\n  t = seq(0, 2 * pi, length.out = 100),\n  x = 16 * sin(t)^3,\n  y = 13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t)\n) \n\nrotated_heart &lt;- rotator(\n  data = heart,\n  x = x,\n  y = y,\n  angle = 180,\n  anchor = \"bottom\"\n)\n\nggplot() +\n  geom_path(\n    data = heart,\n    aes(x, y),\n    color = \"white\"\n  ) +\n  geom_polygon(\n    data = rotated_heart,\n    aes(x, y),\n    fill = \"red\"\n  ) +\n  coord_equal() +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = \"black\", color = NA),  \n    panel.background = element_rect(fill = \"black\", color = NA)\n  )\n\n\n\n\n\n\n\n\n\n\nWave Based Patterns\nThis figure was inspired by this blog  The Tidy Trekker, which explores using simple trigonometric functions to generate wave interference patterns. I adapted the idea by layering sine and cosine waves with customized color gradients and point sizes to create a grid of motion.\n\ngrid &lt;- expand.grid(x = 1:20, y = 1:20)\n\ngrid &lt;- grid %&gt;%\n  mutate(\n    value = sin(x / 2) + cos(y / 3), \n    size = abs(value),\n    color = value\n  )\n\nggplot(grid, aes(x = x, y = y)) +\n  geom_point(aes(size = size, color = color), shape = 21, stroke = 0.3) +\n  scale_color_gradientn(colors = c(\"#ff6b6b\", \"#feca57\", \"#48dbfb\", \"#1dd1a1\")) +\n  scale_size(range = c(2, 6)) +\n  theme_void() +\n  theme(\n    legend.position = \"none\",\n    panel.background = element_rect(fill = \"black\", color = NA),\n    plot.background = element_rect(fill = \"black\", color = NA)\n  ) \n\n\n\n\n\n\n\n\n\n\nColor Flare\nThis plot was inspired by the look of colorful fireworks. I created it using polar coordinates in ggplot2 which I learned more about from this guide, where lines radiate out from the center in different directions. Each line has a random length to give it a more natural, uneven feel. I also added a gradient of bright colors to make it look like a explosion.\n\n# Generate radial data\nn_lines &lt;- 300\nangles &lt;- seq(0, 2 * pi, length.out = n_lines)\n\nburst &lt;- data.frame(\n  x = cos(angles),\n  y = sin(angles),\n  xend = cos(angles) * runif(n_lines, 0.5, 1),\n  yend = sin(angles) * runif(n_lines, 0.5, 1),\n  color = angles\n)\n\n# Plot\nggplot(burst) +\n  geom_segment(aes(x = 0, y = 0, xend = xend, yend = yend, color = color),\n               linewidth = 1.2, alpha = 0.8) +\n  scale_color_gradientn(colors = c(\"#f6d365\", \"#fda085\", \"#fbc2eb\", \"#a18cd1\", \"#84fab0\")) +\n  coord_equal() +\n  theme_void() +\n  theme(\n    legend.position = \"none\",\n    panel.background = element_rect(fill = \"black\", color = NA),\n    plot.background = element_rect(fill = \"black\", color = NA)\n  )"
+  },
+  {
+    "objectID": "projects/panama.html#tropical-field-research-and-data-analysis-in-panama",
+    "href": "projects/panama.html#tropical-field-research-and-data-analysis-in-panama",
+    "title": "Panama, Smithsonian Tropical Research Institute (STRI)",
+    "section": "Tropical Field Research and Data Analysis in Panama 🇵🇦",
+    "text": "Tropical Field Research and Data Analysis in Panama 🇵🇦\nRole: Participant, UCSB & Colón, Panama\n\nProgram: Smithsonian Scholars Program\nDescription:\nParticipated in an advanced field research course focused on tropical ecology and data analysis. The program included intensive training in R programming for field-based data analysis, hands-on use of bioacoustic and camera trap technologies, and field assessments of tropical bird populations.\nKey Activities:\n\n\nCompleted a focused R programming course for analyzing ecological field data\nDeployed AudioMoth devices and camera traps to collect environmental data\nConducted point counts for avian population assessments in tropical forests\n\nSkills Gained:\n\n\nEnvironmental data collection techniques\nField survey methodology for avifauna - Applied ecological statistics in R\n\nReflection:\nThis immersive program strengthened my ability to collect and analyze field data in real-world tropical ecosystems, bridging practical field methods with analytical tools.\n\nGamboa, Panama\n\n\nCool Pictures taken in Pipeline Road, Panama"
+  },
+  {
+    "objectID": "Drawing.html",
+    "href": "Drawing.html",
+    "title": "Drawings",
+    "section": "",
+    "text": "Welcome to my gallery! Below are a few of my drawings. Click of the image to see enlarge version.\n\n\n\n\n\n\nDeer Geometry\n\n\nThis was one of my first drawings! I wanted to experiment with geometry patterns and came up with this.\n\n\n\n\nTriceratops\n\n\nI love dinosaurs! This a very simple but cool drawing and the first dinosaur I draw.\n\n\n\n\n\n\n\nNature\n\n\nThis drawing was inspired by my trip to Panama. I started it on the plane and completed it over the two weeks I spent there. It represents the connection between nature and humanity.\n\n\n\n\nBrachiosaurus\n\n\nLong-necked dinosaurs are my favorite! they look so adorable in most sketches. That’s why I wanted to try something different by drawing a slightly scarier, more realistic version\n\n\n\n\nMuseum Art\n\n\nThis drawing was inspired by famous museum artworks, with the background featuring the UCSB library. I created it while sitting in the library’s egg-shaped chairs. I left the background blank because I liked the contrast it created with the art pieces. This is also one of the few times I added color to my work, as I usually prefer pencil drawing styles. I plan to add more detail to it in the future.\n\n\n\n\nWoman\n\n\nThis was my first digital sketch, created using the Procreate app on my iPad. I wanted to design a drawing that could serve as a template for my first tattoo. I haven’t gotten the tattoo yet but hopefully soon!"
+  },
+  {
+    "objectID": "Drawing.html#paper-sketches",
+    "href": "Drawing.html#paper-sketches",
+    "title": "Drawings",
+    "section": "",
+    "text": "Deer Geometry\n\n\nThis was one of my first drawings! I wanted to experiment with geometry patterns and came up with this.\n\n\n\n\nTriceratops\n\n\nI love dinosaurs! This a very simple but cool drawing and the first dinosaur I draw."
+  },
+  {
+    "objectID": "Drawing.html#digital-skeches",
+    "href": "Drawing.html#digital-skeches",
+    "title": "Drawings",
+    "section": "",
+    "text": "Nature\n\n\nThis drawing was inspired by my trip to Panama. I started it on the plane and completed it over the two weeks I spent there. It represents the connection between nature and humanity.\n\n\n\n\nBrachiosaurus\n\n\nLong-necked dinosaurs are my favorite! they look so adorable in most sketches. That’s why I wanted to try something different by drawing a slightly scarier, more realistic version\n\n\n\n\nMuseum Art\n\n\nThis drawing was inspired by famous museum artworks, with the background featuring the UCSB library. I created it while sitting in the library’s egg-shaped chairs. I left the background blank because I liked the contrast it created with the art pieces. This is also one of the few times I added color to my work, as I usually prefer pencil drawing styles. I plan to add more detail to it in the future.\n\n\n\n\nWoman\n\n\nThis was my first digital sketch, created using the Procreate app on my iPad. I wanted to design a drawing that could serve as a template for my first tattoo. I haven’t gotten the tattoo yet but hopefully soon!"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Download my resume (PDF)"
+  },
+  {
+    "objectID": "projects/Edison.html#avian-functional-richness-spatial-distribution-research",
+    "href": "projects/Edison.html#avian-functional-richness-spatial-distribution-research",
+    "title": "Edison Research Scholarship",
+    "section": "Avian Functional Richness Spatial Distribution Research",
+    "text": "Avian Functional Richness Spatial Distribution Research\nRole: Research Intern, UCSB\nProgram: Edison STEM Summer Research Scholarship\nScholarship amount: $5,000\nDescription:\nConducted research on avian functional richness spatial distribution using provided datasets. Utilized R for data manipulation, statistical analysis, and visualization. Presented results at two research showcases.\nKey Activities:\n- Cleaned and prepared avian trait and spatial distribution data\n- Computed functional richness metrics using FD and tidyverse packages\n- Generated spatial maps and statistical plots to visualize biodiversity pattern.\n\nResearch Poster\n\n\nPresented at the Center for Science and Engineering Partnerships Colloquium\n\nReflection:\nThis project helped me strengthen my skills in ecological data science and reinforced the value of open source tools for spatial biodiversity research."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Click on each tab to check out my projects!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEdison Research Scholarship\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPanama, Smithsonian Tropical Research Institute (STRI)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRstudio Art\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html#where-im-from",
+    "href": "about.html#where-im-from",
+    "title": "About Me",
+    "section": "Where I’m From",
+    "text": "Where I’m From\nI grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food and it’s warm beaches.\n\n\n\n\n\n\n\nPupusas\n\n\n\n\n\n\n\n\n\nBeaches In El Salvador are famous for it’s waves"
+  },
+  {
+    "objectID": "about.html#what-i-love",
+    "href": "about.html#what-i-love",
+    "title": "About Me",
+    "section": "What I Love",
+    "text": "What I Love\nI enjoy physical activities, drawing, and cooking."
+  },
+  {
+    "objectID": "about.html#pets",
+    "href": "about.html#pets",
+    "title": "About Me",
+    "section": "Pets",
+    "text": "Pets\nI have 2 pets, Max and Dino, they both are 6 years old and love going on walks.\n\n\n\n\n\n\n\nMax\n\n\n\n\n\n\n\n\n\nDino"
   }
 ]

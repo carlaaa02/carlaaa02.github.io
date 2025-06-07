@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -38,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-530bf8e59df25186f8bffdc63bad3503.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cb6669ef173fa5a3d6a96bd42ebca5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,7 +68,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -119,15 +179,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#avian-functional-richness-spatial-distribution-research" id="toc-avian-functional-richness-spatial-distribution-research" class="nav-link active" data-scroll-target="#avian-functional-richness-spatial-distribution-research">Avian Functional Richness Spatial Distribution Research</a></li>
-  <li><a href="#tropical-field-research-and-data-analysis-in-panama" id="toc-tropical-field-research-and-data-analysis-in-panama" class="nav-link" data-scroll-target="#tropical-field-research-and-data-analysis-in-panama">Tropical Field Research and Data Analysis in Panama</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -151,47 +204,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<hr>
-<section id="avian-functional-richness-spatial-distribution-research" class="level2">
-<h2 class="anchored" data-anchor-id="avian-functional-richness-spatial-distribution-research">Avian Functional Richness Spatial Distribution Research</h2>
-<p><strong>Role:</strong> Research Intern, UCSB<br>
-<strong>Program:</strong> Edison STEM Summer Research Scholarship</p>
-<p><strong>Description:</strong><br>
-Conducted research on avian functional richness spatial distribution using provided datasets. Utilized R for data manipulation, statistical analysis, and visualization. Presented results at two research showcases.</p>
-<p><strong>Key Activities:</strong> - Cleaned and prepared avian trait and spatial distribution data - Computed functional richness metrics using <code>FD</code> and <code>tidyverse</code> packages - Generated spatial maps and statistical plots to visualize biodiversity pattern.</p>
-<hr>
-<p><strong>Research Poster</strong></p>
-<p><img src="photos/poster.jpg" class="img-fluid" width="669"></p>
-<hr>
-<p><strong>Presented at the Center for Science and Engineering Partnerships Colloquium</strong></p>
-<p><img src="photos/me_poster.jpeg" class="img-fluid" width="669"></p>
-<p><strong>Reflection:</strong><br>
-This project helped me strengthen my skills in ecological data science and reinforced the value of open-source tools for spatial biodiversity research.</p>
-<hr>
-</section>
-<section id="tropical-field-research-and-data-analysis-in-panama" class="level2">
-<h2 class="anchored" data-anchor-id="tropical-field-research-and-data-analysis-in-panama">Tropical Field Research and Data Analysis in Panama</h2>
-<p><strong>Role:</strong> Participant, UCSB &amp; <em>Colón, Panama</em><br>
-<strong>Program:</strong> Smithsonian Scholars Program</p>
-<p><strong>Description:</strong><br>
-Participated in an advanced field research course focused on tropical ecology and data analysis. The program included intensive training in R programming for field-based data analysis, hands-on use of bioacoustic and camera trap technologies, and field assessments of tropical bird populations.</p>
-<p><strong>Key Activities:</strong> - Completed a focused R programming course for analyzing ecological field data - Deployed AudioMoth devices and camera traps to collect environmental data - Conducted point counts for avian population assessments in tropical forests</p>
-<p><strong>Skills Gained:</strong> - Environmental data collection techniques - Field survey methodology for avifauna - Applied ecological statistics in R</p>
-<p><strong>Reflection:</strong><br>
-This immersive program strengthened my ability to collect and analyze field data in real-world tropical ecosystems, bridging practical field methods with analytical tools.</p>
-<hr>
-<p><strong>Gamboa, Panama</strong></p>
-<p><img src="photos/me_group.jpeg" class="img-fluid" width="669"></p>
-<hr>
-<p><strong>Cool Pictures taken in Pipeline Road, Panama</strong></p>
-<p><img src="photos/panama1.jpeg" class="img-fluid" width="669"></p>
-<p><img src="photos/panama2.jpeg" class="img-fluid" width="669"></p>
-<p><img src="photos/panama3.jpeg" class="img-fluid" width="669"></p>
+<p><br></p>
+<p><strong>Click on each tab to check out my projects!</strong></p>
+<p><br></p>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1749179571373" data-listing-reading-time-sort="1" data-listing-word-count-sort="97">
+<div class="thumbnail">
+<p><a href="./projects/Edison.html" class="no-external"></a></p><a href="./projects/Edison.html" class="no-external">
+<p><img loading="lazy" src="./photos/edison.png" class="thumbnail-image"></p>
+</a><p><a href="./projects/Edison.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projects/Edison.html" class="no-external">Edison Research Scholarship</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./projects/Edison.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./projects/Edison.html" class="no-external"><br></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./projects/Edison.html" class="no-external"></a></p><a href="./projects/Edison.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1749180297681" data-listing-reading-time-sort="1" data-listing-word-count-sort="136">
+<div class="thumbnail">
+<p><a href="./projects/panama.html" class="no-external"></a></p><a href="./projects/panama.html" class="no-external">
+<p><img loading="lazy" src="./photos/butterfly.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./projects/panama.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projects/panama.html" class="no-external">Panama, Smithsonian Tropical Research Institute (STRI)</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./projects/panama.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./projects/panama.html" class="no-external"><br></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./projects/panama.html" class="no-external"></a></p><a href="./projects/panama.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1749277331189" data-listing-reading-time-sort="3" data-listing-word-count-sort="582">
+<div class="thumbnail">
+<p><a href="./projects/rstudio.html" class="no-external"></a></p><a href="./projects/rstudio.html" class="no-external">
+<p class="card-img-top"><img src="projects/rstudio_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./projects/rstudio.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./projects/rstudio.html" class="no-external">Rstudio Art</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./projects/rstudio.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./projects/rstudio.html" class="no-external"><br></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./projects/rstudio.html" class="no-external"></a></p><a href="./projects/rstudio.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -610,6 +702,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2025, Carla Quintanilla</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Hola!</p>
+</div>
+  </div>
+</footer>
 
 
 

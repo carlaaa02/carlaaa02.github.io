@@ -38,7 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-79108a0fc1995748cbd19a5b0e3e3e7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cb6669ef173fa5a3d6a96bd42ebca5e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -152,22 +155,65 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><br></p>
 <section id="where-im-from" class="level2">
 <h2 class="anchored" data-anchor-id="where-im-from">Where I’m From</h2>
-<p>I grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food (Pupusas) and it’s warm beaches.</p>
-<p><img src="photos/pupusas.JPG" class="img-fluid"></p>
-<p><img src="photos/46.jpg" class="img-fluid"></p>
+<p>I grew up in El Salvador, I move to the US when I was 12 years old. My favorite thing about my country is the food and it’s warm beaches.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="photos/pupusas.JPG" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Pupusas"><img src="photos/pupusas.JPG" class="img-fluid quarto-figure quarto-figure-left figure-img" width="669" alt="Pupusas"></a></p>
+</figure>
+</div>
+<figcaption>Pupusas</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="photos/46.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Beaches In El Salvador are famous for it’s waves"><img src="photos/46.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="Beaches In El Salvador are famous for it’s waves"></a></p>
+</figure>
+</div>
+<figcaption>Beaches In El Salvador are famous for it’s waves</figcaption>
+</figure>
+</div>
+<p><br></p>
 </section>
 <section id="what-i-love" class="level2">
 <h2 class="anchored" data-anchor-id="what-i-love">What I Love</h2>
-<p>I enjoy physical activities, drawing, and cooking</p>
-<p><img src="photos/outdoor.jpeg" class="img-fluid"></p>
+<p>I enjoy physical activities, drawing, and cooking.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="photos/outdoor.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="photos/outdoor.jpeg" class="img-fluid quarto-figure quarto-figure-left figure-img" width="669"></a></p>
+</figure>
+</div>
+<p><br></p>
 </section>
 <section id="pets" class="level2">
 <h2 class="anchored" data-anchor-id="pets">Pets</h2>
 <p>I have 2 pets, Max and Dino, they both are 6 years old and love going on walks.</p>
-<p><img src="photos/max.jpeg" class="img-fluid"></p>
-<p><img src="photos/dino.jpg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="photos/max.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Max"><img src="photos/max.jpeg" class="img-fluid quarto-figure quarto-figure-left figure-img" width="669" alt="Max"></a></p>
+</figure>
+</div>
+<figcaption>Max</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="photos/dino.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Dino"><img src="photos/dino.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" width="669" alt="Dino"></a></p>
+</figure>
+</div>
+<figcaption>Dino</figcaption>
+</figure>
+</div>
 
 
 </section>
@@ -591,6 +637,51 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2025, Carla Quintanilla</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Hola!</p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
